@@ -19,7 +19,7 @@ namespace editortemplatedemo.Models
             var result = new List<PrognoseDayVM>();
             for (int i = 1; i <= days; i++)
             {
-                result.Add(new PrognoseDayVM());
+                result.Add(new PrognoseDayVM() {DagVanPrognose = StartOfWeek.AddDays(i) });
             }
             PrognoseDays = result;
         }
