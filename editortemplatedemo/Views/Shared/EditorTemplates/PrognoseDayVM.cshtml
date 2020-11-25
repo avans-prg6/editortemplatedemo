@@ -1,0 +1,32 @@
+﻿@model PrognoseDayVM
+
+<div class="col-md-4">
+
+    <div class="form-group">
+        <label asp-for="DagVanPrognose" class="control-label"></label>
+        <input asp-for="DagVanPrognose" class="form-control" />
+        <span asp-validation-for="DagVanPrognose" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Klanten" class="control-label"></label>
+        <input asp-for="Klanten" class="form-control" />
+        <span asp-validation-for="Klanten" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Colli" class="control-label"></label>
+        <input asp-for="Colli" class="form-control" />
+        <span asp-validation-for="Colli" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" asp-for="Spiegelen" /> @Html.DisplayNameFor(model => model.Spiegelen)
+        </label>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

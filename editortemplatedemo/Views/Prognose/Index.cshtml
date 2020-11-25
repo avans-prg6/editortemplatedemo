@@ -1,0 +1,33 @@
+﻿@model PrognoseWeekVM
+
+<h4>PrognoseWeekVM</h4>
+<hr />
+<form asp-action="PrognoseWeekVM">
+    <row>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </row>
+    <row>
+        <div class="form-group">
+            <label asp-for="StartOfWeek" class="control-label"></label>
+            <input asp-for="StartOfWeek" class="form-control" />
+            <span asp-validation-for="StartOfWeek" class="text-danger"></span>
+        </div>
+    </row>
+    <row>
+        @Html.EditorFor(m => m.PrognoseDays)
+    </row>
+    <row>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </row>
+    
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
